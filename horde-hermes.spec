@@ -7,7 +7,7 @@ Summary:	Template for horde projects
 Name:		horde-%{_hordeapp}
 Version:	1.0
 Release:	0.1
-License:	GPL v2 (CHECK IT FIRST, could be ASL)
+License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/hermes/%{_hordeapp}-h3-%{version}.tar.gz
 # Source0-md5:	325e17db8cfad53508b4407da5cea962
