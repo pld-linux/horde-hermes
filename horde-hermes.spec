@@ -42,7 +42,7 @@ Hermes
 
 
 %prep
-%setup -q
+%setup -q -n %{_hordeapp}-h3-%{version}
 
 rm {,*/}.htaccess
 for i in config/*.dist; do
