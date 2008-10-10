@@ -3,7 +3,7 @@
 %define	_hordeapp hermes
 
 %include	/usr/lib/rpm/macros.php
-Summary:	Template for horde projects
+Summary:	A time-tracking application
 Name:		horde-%{_hordeapp}
 Version:	1.0
 Release:	0.1
@@ -12,13 +12,15 @@ Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/hermes/%{_hordeapp}-h3-%{version}.tar.gz
 # Source0-md5:	325e17db8cfad53508b4407da5cea962
 Source1:	%{_hordeapp}.conf
-Patch0:		%{_hordeapp}-prefs.patch
 URL:		http://www.horde.org/hermes/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
 BuildRequires:	tar >= 1:1.15.1
 Requires:	apache(mod_access)
 Requires:	horde >= 3.0
+Requires:	horde-nag
+Requires:	horde-turba
+Requires:	horde-whups
 Requires:	webapps
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,19 +39,13 @@ Framework. It ties into Turba (to retrieve clients) and Nag and
 Whups (to retrieve cost objects).  It comes with a stop watch,
 search and reporting capabilities, and an invoice interface.
 
-%description -l pl.UTF-8
-Hermes
-
-
 %prep
 %setup -q -n %{_hordeapp}-h3-%{version}
 
-rm {,*/}.htaccess
+rm */.htaccess
 for i in config/*.dist; do
 	mv $i config/$(basename $i .dist)
 done
-# considered harmful (horde/docs/SECURITY)
-rm test.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -74,7 +70,6 @@ if [ ! -f %{_sysconfdir}/conf.php.bak ]; then
 	install /dev/null -o root -g http -m660 %{_sysconfdir}/conf.php.bak
 fi
 
-# CHECK FIRST DOES IT HAVE SQL AND FILE THERE.
 if [ "$1" = 1 ]; then
 %banner %{name} -e <<-EOF
 	IMPORTANT:
