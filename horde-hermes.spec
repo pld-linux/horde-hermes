@@ -6,7 +6,7 @@
 Summary:	A time-tracking application
 Name:		horde-%{_hordeapp}
 Version:	1.0
-Release:	0.1
+Release:	1
 License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/hermes/%{_hordeapp}-h3-%{version}.tar.gz
@@ -17,7 +17,7 @@ BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
 BuildRequires:	tar >= 1:1.15.1
 Requires:	apache(mod_access)
-Requires:	horde >= 3.0
+Requires:	horde >= 3.2
 Requires:	horde-nag
 Requires:	horde-turba
 Requires:	horde-whups
