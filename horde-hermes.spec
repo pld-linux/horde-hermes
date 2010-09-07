@@ -5,12 +5,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	A time-tracking application
 Name:		horde-%{_hordeapp}
-Version:	1.0
+Version:	1.0.1
 Release:	1
 License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/hermes/%{_hordeapp}-h3-%{version}.tar.gz
-# Source0-md5:	325e17db8cfad53508b4407da5cea962
+# Source0-md5:	41c0297304b145adcfc4cb59f06194d2
 Source1:	%{_hordeapp}.conf
 URL:		http://www.horde.org/hermes/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
@@ -35,9 +35,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Hermes is a time-tracking application integrated with the Horde
-Framework. It ties into Turba (to retrieve clients) and Nag and
-Whups (to retrieve cost objects).  It comes with a stop watch,
-search and reporting capabilities, and an invoice interface.
+Framework. It ties into Turba (to retrieve clients) and Nag and Whups
+(to retrieve cost objects). It comes with a stop watch, search and
+reporting capabilities, and an invoice interface.
 
 %prep
 %setup -q -n %{_hordeapp}-h3-%{version}
