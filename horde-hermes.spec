@@ -2,7 +2,6 @@
 # - lighttpd support
 %define	_hordeapp hermes
 
-%include	/usr/lib/rpm/macros.php
 Summary:	A time-tracking application
 Name:		horde-%{_hordeapp}
 Version:	1.0.1
