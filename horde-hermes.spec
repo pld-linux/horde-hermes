@@ -5,7 +5,7 @@
 Summary:	A time-tracking application
 Name:		horde-%{_hordeapp}
 Version:	1.0.1
-Release:	3
+Release:	4
 License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/hermes/%{_hordeapp}-h3-%{version}.tar.gz
